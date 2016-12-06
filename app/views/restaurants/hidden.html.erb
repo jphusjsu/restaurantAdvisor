@@ -1,0 +1,20 @@
+<div class="bg-content">
+  <!-- content -->
+  <div id="content">
+    <div class="ic"></div>
+    <div class="container">
+      <div class="row">
+        <article class="span8">
+        <% if @restaurants.blank?%>
+          <h3>Couldn't find any hidden restaurants.</h3>
+        <% else %>
+          <% @restaurants.each do |f| %>
+            <h3><%= link_to f.name, f %> </h3> 
+            <br><br><br>
+          <% end %>
+        <% end %>
+      </article>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="bg-content">
+  <!--  content  -->
+  <div id="content">
+    <div class="ic"></div>
+    <div class="container">
+      <div class="row">
+        <article class="span8">
+          <div class="inner-1">
+            <h3>All Complaints</h3>
+            <% if @complaints.blank? %>
+              <p>None!</p>
+            <% else %>
+              <% @complaints.reverse_each do |r| %>
+                <ul class="list extra extra1">
+                  <li>
+                    <% begin %><%= "#{r.user.first_name} #{r.user.last_name}" %><% rescue %>Unknown<% end %><i> said about 
+                    <% begin %><%= "#{r.restaurant.name}" %><% rescue %>Unknown<% end %>:<br>
+                    <%= r.body %></i><br><br>
+                  </li>
+                </ul>
+              <% end %>
+            <% end %>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>

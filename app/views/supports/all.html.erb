@@ -1,0 +1,27 @@
+<div class="bg-content">
+  <!--  content  -->
+  <div id="content">
+    <div class="ic"></div>
+    <div class="container">
+      <div class="row">
+        <article class="span8">
+          <div class="inner-1">
+            <h3>Support list</h3>
+            <% if @supports.blank? %>
+              <p>None!</p>
+            <% else %>
+              <% @supports.reverse_each do |r| %>
+                <ul class="list extra extra1">
+                  <li>
+                    <%= "#{r.name}" %><i> said:<br>
+                    <%= r.body %></i><br><br>
+                  </li>
+                </ul>
+              <% end %>
+            <% end %>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="bg-content">
+  <div class="container">
+    <div class="row">
+      <article class="span12">
+        <h4>Search for a restaurant:</h4>
+        <!-- start search form -->
+        <%= form_tag search_restaurants_path, method: :get do |f| %>
+          <%= text_field_tag :keyword, nil, placeholder: "steaks, pasta, etc." %>
+          <%= text_field_tag :location, nil, placeholder: "Houston, Santa Clara, etc." %>
+          <%= select_tag :category, options_for_select(Category.all.map{|i| [i.name, i.id]}) %><br>
+          <%= submit_tag "Search", class:"btn btn-1" %>
+        <% end %>
+        <!-- end search form -->
+      </article>
+    </div>
+  </div>
+</div>

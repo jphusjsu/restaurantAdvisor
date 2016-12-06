@@ -1,0 +1,36 @@
+<div class="bg-content">
+<!-- content -->
+  <div id="content" class="content-extra">
+    <div class="ic"></div>
+    <!-- searchform here -->
+    <%= render 'layouts/searchform' %>
+    <!-- end searchform -->
+    <div class="row-2">
+      <div class="container">
+        <h3>Found new restaurant?</h3>
+        <h3>Tell us about it below!</h3>
+        <p>We will review it and add it to our list.</p>
+        <%= link_to "Add new restaurant", new_restaurant_path, class:"btn btn-1" %> 
+        <% if current_user.try(:admin) %>
+          <%= link_to "Hidden Restaurants", hidden_restaurants_path, class:"btn btn-1" %>
+          <%= link_to "Complaints", complaints_path, class:"btn btn-1" %>
+          <%= link_to "Support List", all_supports_path, class:"btn btn-1" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <article class="span6">
+          <br><%= image_tag("food01.jpg") %><br><br>
+          <%= image_tag("food04.jpg") %><br><br>
+          <%= image_tag("food06.jpg") %>
+        </article>
+        <article class="span6">
+          <br><%= image_tag("food05.jpg") %><br><br>
+          <%= image_tag("food02.jpg") %><br><br>
+          <%= image_tag("food03.jpg") %>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>

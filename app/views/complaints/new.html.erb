@@ -1,0 +1,20 @@
+<div class="bg-content">
+  <!-- content -->
+  <div id="content">
+    <div class="ic"></div>
+    <div class="container">
+      <div class="row">
+        <article class="span8">
+          <h3>Add new complaint</h3>
+          <div class="inner-1">
+            <%= form_for [@restaurant, @complaint], url: {action: "create"} do |f| %>
+            	<%= f.label :body %>
+      				<%= f.text_area :body %><br>
+      				<%= f.submit class:"btn btn-1"%>
+    			  <% end %>
+          </div>
+        </article>
+      </div>
+   </div>
+  </div>
+</div>
