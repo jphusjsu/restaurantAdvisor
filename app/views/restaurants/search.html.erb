@@ -9,7 +9,7 @@
       <div class="row">
         <article class="span8">
         <% if @restaurants.blank?%>
-          <h3>Couldn't find any restaurant matching the specified parameters.</h3>
+          <h3>Could not find any restaurant matching the specified parameters, Please try again. </h3>
         <% else %>
           <% @restaurants.each do |f| %>
             <h3><%= link_to f.name, f %> </h3> <% if f.reviews.blank? %>(0.0)
